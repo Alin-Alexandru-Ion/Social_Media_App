@@ -1,2 +1,2 @@
 # Social_Media_Frontend
-React &amp; React Bootstrap
+Typescript, React and React Bootstrap
