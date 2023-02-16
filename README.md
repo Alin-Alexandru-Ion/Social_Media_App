@@ -1,13 +1,17 @@
 # Social Media App
 Intended functionality:
-1. Login/Register
-2. Profile Editing
-3. Friends List
-4. Posts Feed
-5. Direct Messaging
+<ol>
+  <li>Login/Register</li>
+  <li>Profile Editing</li>
+  <li>Friends List</li>
+  <li>Posts Feed</li>
+  <li>Direct Messaging</li>
+</ol>
 ## Techstack:
-•Node.js
-•React
-•Typescript
-•Material UI
-•PostgreSQL (Not yet)
+<ul>
+  <li>Node.js</li>
+  <li>React</li>
+  <li>Typescript</li>
+  <li>Material UI</li>
+  <li>PostgreSQL (Not yet)</li>
+</ul>
