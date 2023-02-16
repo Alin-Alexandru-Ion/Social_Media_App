@@ -1,5 +1,5 @@
 <h1>Social Media App</h1>
-<h3>Intended functionality:</h3>
+<h2>Intended functionality:</h2>
 <ol>
   <li>Login/Register</li>
   <li>Profile Editing</li>
@@ -7,7 +7,7 @@
   <li>Posts Feed</li>
   <li>Direct Messaging</li>
 </ol>
-<h2>Techstack:</h2>
+<h3>Techstack:</h3>
 <ul>
   <li>Node.js</li>
   <li>React</li>
