@@ -3,8 +3,8 @@ import './Footer.css'
 
 function Footer() {
     return (
-      <footer>
-        <p className="rights">© 2023 AAI Development. All rights reserved.</p>
+      <footer className='footer'>
+        <p className="copyright">© 2023 AAI Development. All rights reserved.</p>
       </footer>
     );
   }

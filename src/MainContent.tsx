@@ -3,13 +3,14 @@ import './MainContent.css'
 
 function MainContent() {
     return (
-      <div>
-        <h1>First React Project</h1>
+      <div className='main-content'>
+        <h3>Techstack:</h3>
         <ol>
           <li>Node.js Server</li>
-          <li>Typescript</li>
           <li>React</li>
+          <li>Typescript</li>
           <li>Material UI</li>
+          <li>PostgreSQL (Not yet)</li>
         </ol>
       </div>
     );

@@ -1,3 +1,9 @@
-.rights {
+.footer {
+    background-color: #3B7984;
+    color: aliceblue;
+}
+
+.copyright {
+    font-family: "roboto";
     font-size: 12px;
 }

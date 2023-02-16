@@ -1,3 +1,33 @@
+.header {
+    background-color: #083138;
+    font-family: "roboto";
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: inline-flex;
+    align-items: center;
+    color: aliceblue;
+    padding: 5px;
+}
+
+.nav-right {
+    padding: 5px;
+}
+
 .logo {
     width: 50px;
+}
+
+.list > li {
+    display: inline-flex;
+    list-style: none;
+    font-size: 18px;
+    color: aliceblue;
+    padding-left: 10px;
 }
