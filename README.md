@@ -1,2 +1,3 @@
-# Social_Media_App
-React, React Bootsrap & Typescript
+# Social Media App
+## Frameworks
+Node.js, React, Typescript & Material UI
