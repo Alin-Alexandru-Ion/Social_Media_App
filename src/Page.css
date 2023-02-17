@@ -1,3 +1,7 @@
 .button-group {
     display: inline-flex;
 }
+
+.text-fields {
+    display: flex;
+}
