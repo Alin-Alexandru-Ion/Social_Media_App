@@ -7,7 +7,7 @@ function Header() {
         <nav className="nav">
           <div className='nav-left'>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" className='logo' />
-            <h1>My First React App</h1>
+            <h1>Social Media App</h1>
           </div>
           <div className='nav-right'>
             <ul className="list">

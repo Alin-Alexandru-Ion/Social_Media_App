@@ -1,0 +1,7 @@
+.tech {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #5386F5;
+}

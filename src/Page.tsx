@@ -1,9 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './Page.css';
 
 import Header from './Header';
-import MainContent from './MainContent';
+import LogIn from './pages/LogIn';
+import SignUp from './pages/SignUp';
+import Forgot from './pages/Forgot';
 import Footer from './Footer';
 
 
@@ -11,7 +14,14 @@ function Page() {
   return (
     <div className="App">
       <Header />
-      <MainContent />
+      <Router>
+        <Routes>
+          <Route path="/" element={<LogIn />} />
+          <Route path="/log-in" element={<LogIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/forgot" element={<Forgot />} />
+        </Routes>
+      </Router>
       <Footer />
     </div>
   );
