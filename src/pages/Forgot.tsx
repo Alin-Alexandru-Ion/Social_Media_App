@@ -12,31 +12,31 @@ import BlueTheme from '../themes/Theme';
 
 // Element UI TextFields, Buttons and Links
 function SignUp() {
-  const [age, setAge] = React.useState('');
+  const [question, setQuestion] = React.useState('');
 
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
+    setQuestion(event.target.value);
   };
 
   return (
     <ThemeProvider theme={BlueTheme}>
       <div className='text-fields'>
-        <TextField className='user' color='secondary' label="Username" variant="outlined" />
+        <TextField className='user' color='primary' label="Username" variant="outlined" />
 
         <FormControl variant="standard" sx={{ m: 1, minWidth: 140 }}>
-        <InputLabel id="demo-simple-select-filled-label">Secret question</InputLabel>
+        <InputLabel id="secret-question">Secret question</InputLabel>
         <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={age}
+          labelId="secret-question"
+          id="secret-question-filled"
+          value={question}
           onChange={handleChange}
         >
           <MenuItem value={1}>What's the name of your favorite Pet?</MenuItem>
           <MenuItem value={2}>What's the name of your first school?</MenuItem>
           <MenuItem value={3}>What's the name of the first street you lived on?</MenuItem>
         </Select>
-      </FormControl>
-
+        </FormControl>
+        <TextField className='answer' color='primary' label="Secret answer" variant="outlined" />
       </div>
       <div className='reset-button'>
         <Button color='primary' variant='contained'>Reset Password</Button>

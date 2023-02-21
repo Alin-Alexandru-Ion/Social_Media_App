@@ -2,7 +2,7 @@ import React from 'react'
 
 import './LogIn.css'
 
-import { Button, Link, TextField } from '@mui/material';
+import { Button, Grid, Link, TextField } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 
 // Import CustomTheme from Themes subfolder
@@ -14,8 +14,11 @@ function LogIn() {
   return (
     <ThemeProvider theme={BlueTheme}>
       <div className='text-fields'>
-        <TextField className='user' color='secondary' label="Username" variant="outlined" />
-        <TextField className='pass' color='secondary' label="Password" variant="outlined" type='password' />
+        <Grid>
+          <TextField className='user' color='primary' label="Username" variant="outlined" 
+          />
+        </Grid>
+        <TextField className='pass' color='primary' label="Password" variant="outlined" type='password' />
       </div>
       <div className='login-button'>
         <Button color='primary' variant='contained'>Log In</Button>
@@ -26,7 +29,7 @@ function LogIn() {
             Forgot password?
           </Link>
           <Link className='sign-up' href="sign-up" color='primary' variant="body1">
-            {"Don't have an account? Sign Up"}
+            {"No account? Sign Up"}
           </Link>
         </div>
       </div>
