@@ -2,7 +2,8 @@ import React from 'react'
 
 import './LogIn.css'
 
-import { Button, Grid, Link, TextField } from '@mui/material';
+import { Button, Container, Link, TextField } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2'
 import { ThemeProvider } from '@mui/material/styles';
 
 // Import CustomTheme from Themes subfolder
@@ -12,28 +13,57 @@ import BlueTheme from '../themes/Theme';
 // Element UI TextFields, Buttons and Links
 function LogIn() {
   return (
-    <ThemeProvider theme={BlueTheme}>
-      <div className='text-fields'>
-        <Grid>
-          <TextField className='user' color='primary' label="Username" variant="outlined" 
-          />
+    <ThemeProvider theme={BlueTheme} >
+    
+      <Container >
+      
+        <Grid container spacing={2} alignItems="center" direction="column"
+        >
+        
+          <Grid xs="auto" >
+            <TextField className='user' color='primary' label="Username" variant="outlined" 
+            />
+          </Grid >
+          
+          <Grid xs="auto" >  
+            <TextField className='pass' color='primary' label="Password" variant="outlined" type='password' />
+          </Grid >
+          
+          <Grid xs="auto" >
+            <Button color='primary' variant='contained' size="large" 
+            >Log In
+            </Button >
+            
+          </Grid >
+          
         </Grid>
-        <TextField className='pass' color='primary' label="Password" variant="outlined" type='password' />
-      </div>
-      <div className='login-button'>
-        <Button color='primary' variant='contained'>Log In</Button>
-      </div>
-      <div className='links'>
-        <div>
-          <Link className='forgot' href="forgot" color='primary' variant="body1">
-            Forgot password?
-          </Link>
-          <Link className='sign-up' href="sign-up" color='primary' variant="body1">
-            {"No account? Sign Up"}
-          </Link>
-        </div>
-      </div>
-    </ThemeProvider>
+        
+        <Grid container spacing={2} justify-content="center" alignItems="center"
+        >
+        
+          <Grid spacing={2} >
+          
+            <Link className='forgot' href="forgot" color='primary' variant="body1"
+            >
+              Forgot password?
+            </Link >
+            
+          </Grid >
+          
+          <Grid spacing={2} >
+          
+            <Link className='sign-up' href="sign-up" color='primary' variant="body1"
+            >
+              {"No account? Sign Up"}
+            </Link >
+            
+          </Grid >
+          
+        </Grid >
+        
+      </Container >
+      
+    </ThemeProvider >
   );
 }
 
