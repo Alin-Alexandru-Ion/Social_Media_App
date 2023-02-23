@@ -12,7 +12,7 @@ import Footer from './Footer';
 
 function Page() {
   return (
-    <div className="App" >
+    <div >
       <Header />
       <Router >
         <Routes >
