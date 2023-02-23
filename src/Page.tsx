@@ -12,18 +12,21 @@ import Footer from './Footer';
 
 function Page() {
   return (
-    <div className="App">
+    <div className="App" >
       <Header />
-      <Router>
-        <Routes>
+      <Router >
+        <Routes >
           <Route path="/" element={<LogIn />} />
-          <Route path="/log-in" element={<LogIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/forgot" element={<Forgot />} />
-        </Routes>
-      </Router>
+          <Route path="/log-in" element={<LogIn />}
+          />
+          <Route path="/sign-up" element={<SignUp />}
+          />
+          <Route path="/forgot" element={<Forgot />}
+          />
+        </Routes >
+      </Router >
       <Footer />
-    </div>
+    </div >
   );
 }
 

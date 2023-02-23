@@ -1,17 +1,31 @@
 import React from 'react'
 import './Header.css'
 
+import { AppBar, Box, Button, Container, IconButton, Stack,  Toolbar, Typography } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu';
+
 function Header() {
     return (
-      <header className='header'>
-        <nav className="nav">
-          <div className='nav-left'>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" className='logo' />
-            <h1>Social Media App</h1>
-          </div>
-        </nav>
-      </header>
+      <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Social Media App
+          </Typography>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" width="40" />
+        </Toolbar>
+      </AppBar>
+    </Box>
     );
   }
 
-  export default Header;
+  export default Header
