@@ -1,5 +1,4 @@
 import React from 'react'
-import './Header.css'
 
 import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';

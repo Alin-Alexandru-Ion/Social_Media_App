@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './Forgot.css'
-
 import { Button, Container, FormControl, InputLabel, MenuItem, Stack, TextField } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import Select, { SelectChangeEvent } from '@mui/material/Select';

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Footer.css'
 
 import { Stack, Typography } from '@mui/material'
 
