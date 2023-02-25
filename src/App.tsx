@@ -1,33 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useSyncExternalStore } from 'react';
 import axios from 'axios';
 
-interface User {
+type User = {
   id: number;
   username: string;
   nickname: string;
-}
+  password: string;
+  question: number;
+  answer: string;
+};
 
 function App() {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    axios.get<User[]>('/users').then((response) => {
-      setUsers(response.data);
-    });
+    axios.get<User[]>('http://localhost:3001/api/users')
+      .then(response => setUsers(response.data))
+      .catch(error => console.log(error));
   }, []);
 
   return (
     <div>
-      <h1>Users</h1>
+      <h1>List of Users</h1>
       <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            {user.username} ({user.nickname})
+        {users.map(user => (
+          <li key={user.id} >
+            <h2> {user.username} </h2>
+            <p> Nickname: {user.nickname} </p>
+            <p> Password: {user.password} </p>
+            <p> Secret Question: {user.question} </p>
+            <p> Secret Answer: {user.answer} </p>
           </li>
         ))}
       </ul>
     </div>
   );
 }
+
 
 export default App;

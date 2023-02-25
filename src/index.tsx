@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import './App';
+import App from './App';
 import Header from './Header';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
@@ -19,12 +19,10 @@ function Page() {
       <Router >
         <Routes >
           <Route path="/" element={<LogIn />} />
-          <Route path="/log-in" element={<LogIn />}
-          />
-          <Route path="/sign-up" element={<SignUp />}
-          />
-          <Route path="/forgot" element={<Forgot />}
-          />
+          <Route path="/log-in" element={<LogIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/forgot" element={<Forgot />} />
+          <Route path="/app" element={<App />} />
         </Routes >
       </Router >
       <Footer />

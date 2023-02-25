@@ -18,5 +18,5 @@
   <li>Axios</li>
   <li>Typescript</li>
   <li>Material UI</li>
-  <li>PostgreSQL (Not implemented yet)</li>
+  <li>PostgreSQL</li>
 </ul>
