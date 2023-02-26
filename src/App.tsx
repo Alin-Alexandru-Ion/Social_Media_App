@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useSyncExternalStore } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 type User = {
@@ -14,7 +14,7 @@ function App() {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    axios.get<User[]>('http://localhost:3001/api/users')
+    axios.get<User[]>('http://127.0.0.1:3001/api/users')
       .then(response => setUsers(response.data))
       .catch(error => console.log(error));
   }, []);
