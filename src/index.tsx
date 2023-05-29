@@ -7,6 +7,7 @@ import Header from './Header';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Forgot from './pages/Forgot';
+import Form from './pages/Form';
 import Footer from './Footer';
 import './index.css';
 
@@ -22,7 +23,8 @@ function Page() {
           <Route path="/log-in" element={<LogIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/forgot" element={<Forgot />} />
-          <Route path="/app" element={<App />} />
+          <Route path="/allusers" element={<App />} />
+          <Route path="/form" element={<Form />} />
         </Routes >
       </Router >
       <Footer />

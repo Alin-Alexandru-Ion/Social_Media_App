@@ -12,12 +12,14 @@ function LogIn() {
   return (
     <ThemeProvider theme={BlueTheme} >
       <Container >
+        <form>
         <Stack spacing={2} alignItems="center" direction="column" >
           <TextField color='primary' label="Username" variant="outlined" sx={{ mt: 2 }} />
           <TextField color='primary' label="Password" variant="outlined" type='password' />
-          <Button color='primary' variant='contained' size="large" sx={{ mb: 1 }} >Log In
+          <Button type='submit' color='primary' variant='contained' size="large" sx={{ mb: 1 }} >Log In
           </Button >
         </Stack >
+        </form>
         <Stack 
           spacing={4} 
           direction="row" 
@@ -25,7 +27,8 @@ function LogIn() {
           sx={{ 
             mt: 2,
             mb: 1
-          }} >
+          }} 
+        >
           <Link href="forgot" color='primary' variant="body1" >
             Forgot password?
           </Link >

@@ -36,10 +36,11 @@ app.get('/api/users', async (req, res) => {
 
 // Define a route to post a user
 app.post('/api/users', async (req, res) => {
-  const { name, nickname, password } = req.body;
+  const { username, nickname, password, question, answer } = req.body;
   try {
     // Insert a new user into the database
-    await pool.query('INSERT INTO users (name, nickname, password) VALUES ($1, $2, $3)', [name, nickname, password]);
+    await pool.query('INSERT INTO users (username, nickname, password, question, answer) VALUES ($1, $2, $3, $4, $5)',
+    [username, nickname, password, question, answer]);
     // Return a success message
     res.status(201).json({ message: 'User added successfully' });
   } 
@@ -53,10 +54,11 @@ app.post('/api/users', async (req, res) => {
 // Define a route to update a user
 app.put('/api/users/:id', async (req, res) => {
   const id = parseInt(req.params.id);
-  const { name, nickname, password } = req.body;
+  const { username, nickname, password, question, answer } = req.body;
   try {
     // Update the user with the specified id
-    await pool.query('UPDATE users SET name = $1, nickname = $2, password = $3 WHERE id = $4', [name, nickname, password, id]);
+    await pool.query('UPDATE users SET username = $1, nickname = $2, password = $3, question = $4, answer = $5 WHERE id = $6', 
+    [username, nickname, password, question, answer, id]);
     // Return a success message
     res.status(200).json({ message: `User with id ${id} updated successfully` });
   } 

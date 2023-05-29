@@ -1,0 +1,16 @@
+2023-05-26 17:49:01.772 CEST [20980] LOG:  redirecting log output to logging collector process
+2023-05-26 17:49:01.772 CEST [20980] HINT:  Future log output will appear in directory "log".
+2023-05-26 17:49:09.347 CEST [19276] LOG:  redirecting log output to logging collector process
+2023-05-26 17:49:09.347 CEST [19276] HINT:  Future log output will appear in directory "log".
+2023-05-26 17:49:20.626 CEST [356] LOG:  redirecting log output to logging collector process
+2023-05-26 17:49:20.626 CEST [356] HINT:  Future log output will appear in directory "log".
+^C2023-05-29 16:10:01.071 CEST [21196] LOG:  redirecting log output to logging collector process
+2023-05-29 16:10:01.071 CEST [21196] HINT:  Future log output will appear in directory "log".
+2023-05-29 16:10:08.609 CEST [2264] LOG:  redirecting log output to logging collector process
+2023-05-29 16:10:08.609 CEST [2264] HINT:  Future log output will appear in directory "log".
+2023-05-29 16:10:14.185 CEST [1008] LOG:  redirecting log output to logging collector process
+2023-05-29 16:10:14.185 CEST [1008] HINT:  Future log output will appear in directory "log".
+2023-05-29 16:10:17.771 CEST [20172] LOG:  redirecting log output to logging collector process
+2023-05-29 16:10:17.771 CEST [20172] HINT:  Future log output will appear in directory "log".
+2023-05-29 16:13:28.500 CEST [4816] LOG:  redirecting log output to logging collector process
+2023-05-29 16:13:28.500 CEST [4816] HINT:  Future log output will appear in directory "log".
