@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import { Button, Container, Stack, TextField } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 
@@ -20,6 +21,7 @@ function LogIn() {
   const [users, setUsers] = useState<User[]>([]);
   const [userText, setUserText] = useState('');
   const [passText, setPassText] = useState('');
+  const navigate = useNavigate();
   
 
   //Handle TextField Values At Use
@@ -33,11 +35,10 @@ function LogIn() {
 
   //Get Users Data
   useEffect(() => {
-    axios.get<User[]>('http://127.0.0.1:3001/api/users')
+    axios.get<User[]>('http://localhost:3001/api/users')
       .then(response => setUsers(response.data))
       .catch(error => console.log(error));
   }, []);
-
 
   //Modify Submit Functionality
   const handleSubmit = (event: React.FormEvent) => {
@@ -46,15 +47,14 @@ function LogIn() {
     const userDB = users.map(user => user.username);
     const passDB = users.map(user => user.password);
 
-
     //Dummy Login Check
-    if (userText == userDB.toString() && passText == passDB.toString())
+    if (userText === userDB.toString() && passText === passDB.toString())
     {
-      console.log('Success');
+      navigate('/observer')
     }
     else
     {
-      console.log('Fail');
+      navigate('/forgot')
     }
   };
 
