@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { Button, Box, Container, Stack, Typography } from '@mui/material';
+import { EmojiEmotions } from '@mui/icons-material';
 
 const ScrollHandler: React.FC = () => {
   const [placeholders, setPlaceholders] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
     // Add initial set of 10 div elements
-    const initialPlaceholders = Array.from({ length: 10 }, (_, index) => (
+    const initialPlaceholders = Array.from({ length: 5 }, (_, index) => (
       <div
         key={index}
         style={{
-          backgroundColor: '#000000',
-          height: '500px',
+          backgroundColor: '#DDDDDD',
+          height: '800px',
           marginLeft: '5px',
           marginRight: '5px',
           marginTop: '25px',
@@ -26,20 +28,55 @@ const ScrollHandler: React.FC = () => {
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-      if (scrollTop + windowHeight >= documentHeight - 20) {
+      if (scrollTop + windowHeight >= documentHeight - 22) {
         // Perform actions when scrolling near the bottom of the page
         const newPlaceholder = (
-          <div
-            key={placeholders.length}
+          <div key={placeholders.length} 
             style={{
-              backgroundColor: '#000000',
-              height: '500px',
+              backgroundColor: '#DDDDDD',
+              height: '800px',
               marginLeft: '5px',
               marginRight: '5px',
               marginTop: '25px',
               marginBottom: '5px',
-            }}
-          />
+              borderRadius: '10px'
+            }}>
+
+            <Stack direction= 'column' >
+              <Stack direction= 'column' sx={{ height: '10%' }} >
+                <Stack direction='row' >
+                  <Box >
+                    <img src=''></img>
+                  </Box >
+                  <Typography variant='h6'>Name</Typography>
+                </Stack >
+                <p >Description</p >
+              </Stack >
+
+              <Box sx={{width: '35', height: '60%' }} >
+                <img src='https://source.unsplash.com/825x600/?beach' ></img >
+              </Box >
+
+              <Stack direction= 'column' sx={{height: '10%'}} >
+                <Stack direction='row' >
+                  <EmojiEmotions></EmojiEmotions>
+                  <h5>1500 Likes</h5>
+                </Stack >
+                <Stack direction='row' >
+                  <Button sx={{}} >
+                    Like
+                  </Button >
+                  <Button >
+                    Comment
+                  </Button >
+                  <Button >
+                    Share
+                  </Button >
+                </Stack >
+              </Stack >
+            </Stack >
+    
+          </div >
         );
         setPlaceholders((prevPlaceholders) => [...prevPlaceholders, newPlaceholder]);
       }
@@ -90,7 +127,29 @@ const ScrollHandler: React.FC = () => {
     };
   }, []); // Empty dependency array to run the effect only once
 
-  return <div>{placeholders}</div>;
+  return <Stack direction='row' >
+      <Container sx={{width: '18%', height: '94%', left: '5%'}} >
+        <Container sx={{width: '18%', height: '94%', top: '5.5%', left: '5%', borderRadius: '10px', backgroundColor: '#CCCCCC', position: 'fixed'}} >
+          <p > Menu </p >
+          <Button >
+            Menu Element
+          </Button>
+        </Container >
+      </Container >
+
+      <Container sx={{width: '35%', height: '94%', top: '5.5%', left: '21%', right: '21%', borderRadius: '10px',  backgroundColor: '#CCCCCC'}} >
+        {placeholders}
+      </Container >
+      
+      <Container sx={{width: '18%', height: '94%', right: '5%' }} >
+        <Container  sx={{width: '18%', height: '94%', top: '5.5%', right: '5%', borderRadius: '10px', backgroundColor: '#CCCCCC',  position: 'fixed'}} >
+          <p > Chat </p >
+          <Button >
+            Send Message
+          </Button >
+        </Container >
+      </Container>
+    </Stack >
 };
 
 export default ScrollHandler;

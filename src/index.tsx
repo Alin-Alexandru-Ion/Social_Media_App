@@ -7,7 +7,6 @@ import Header from './Header';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Forgot from './pages/Forgot';
-import Form from './pages/Form';
 import Observer from './pages/Observer';
 import Footer from './Footer';
 import './index.css';
@@ -25,7 +24,6 @@ function Page() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/forgot" element={<Forgot />} />
           <Route path="/all-users" element={<App />} />
-          <Route path="/form" element={<Form />} />
           <Route path="/observer" element={<Observer />} />
         </Routes >
       </Router >
