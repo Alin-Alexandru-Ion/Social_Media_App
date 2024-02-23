@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Box, Container, Stack, Typography } from '@mui/material';
-import { EmojiEmotions } from '@mui/icons-material';
+import { Button, Box, Container, Stack, Typography, Avatar, backdropClasses } from '@mui/material';
+import { EmojiEmotions, ThumbUp, ThumbUpRounded, Widgets } from '@mui/icons-material';
+import { deepOrange } from '@mui/material/colors';
 
 const ScrollHandler: React.FC = () => {
   const [placeholders, setPlaceholders] = useState<JSX.Element[]>([]);
@@ -8,17 +9,44 @@ const ScrollHandler: React.FC = () => {
   useEffect(() => {
     // Add initial set of 10 div elements
     const initialPlaceholders = Array.from({ length: 5 }, (_, index) => (
-      <div
-        key={index}
-        style={{
-          backgroundColor: '#DDDDDD',
-          height: '800px',
-          marginLeft: '5px',
-          marginRight: '5px',
-          marginTop: '25px',
-          marginBottom: '5px',
-        }}
-      />
+      <Container key={placeholders.length} 
+          sx={{ backgroundColor: '#DDDDDD', height: '75%', borderRadius: '10px', marginTop: '2%', marginBottom: '2%' }}>
+
+            <Stack direction= 'column' >
+              <Stack direction= 'column' sx={{ height: '12%' }} >
+                <Stack direction='row' spacing={1} sx={{ alignItems: 'center', marginTop: '1.5%' }} >
+                  <Avatar sx={{ bgcolor: deepOrange[500], left: '0%' }} >U</Avatar >
+                  <Typography variant='h6' > Username </Typography>
+                </Stack >
+                <p >Description</p >
+              </Stack >
+
+              <Container >
+                <img src='https://source.unsplash.com/1600x900/?beach' alt='Post' style={{ width: '100%', objectFit: 'contain' }} ></img >
+              </Container >
+
+              <Stack direction= 'column' sx={{height: '12%', marginBottom: '2%'}} >
+                <Stack direction='row' sx={{height: '5%', alignItems: 'center'}} >
+                  <Avatar sx={{ color: '#77AAFF', backgroundColor: "inherit", scale: '75%'}} >
+                    <ThumbUpRounded />
+                  </Avatar >
+                  <h5>1500 Likes</h5>
+                </Stack >
+                <Stack direction='row' spacing={1} sx={{ height: '5%', justifyContent: 'space-evenly', marginBottom: '2%' }} >
+                  <Button color='primary' variant='outlined' size="large" sx={{ width: '32%' }} >
+                    Like
+                  </Button >
+                  <Button color='primary' variant='outlined' size="large" sx={{ width: '32%' }} >
+                    Comments
+                  </Button >
+                  <Button color='primary' variant='outlined' size="large" sx={{ width: '32%' }} >
+                    Share
+                  </Button >
+                </Stack >
+              </Stack >
+            </Stack >
+    
+          </Container >
     ));
     setPlaceholders(initialPlaceholders);
 
@@ -31,52 +59,44 @@ const ScrollHandler: React.FC = () => {
       if (scrollTop + windowHeight >= documentHeight - 22) {
         // Perform actions when scrolling near the bottom of the page
         const newPlaceholder = (
-          <div key={placeholders.length} 
-            style={{
-              backgroundColor: '#DDDDDD',
-              height: '800px',
-              marginLeft: '5px',
-              marginRight: '5px',
-              marginTop: '25px',
-              marginBottom: '5px',
-              borderRadius: '10px'
-            }}>
+          <Container key={placeholders.length} 
+          sx={{ backgroundColor: '#DDDDDD', height: '75%', borderRadius: '10px', marginTop: '2%', marginBottom: '2%' }}>
 
             <Stack direction= 'column' >
-              <Stack direction= 'column' sx={{ height: '10%' }} >
-                <Stack direction='row' >
-                  <Box >
-                    <img src=''></img>
-                  </Box >
-                  <Typography variant='h6'>Name</Typography>
+              <Stack direction= 'column' sx={{ height: '12%' }} >
+                <Stack direction='row' spacing={1} sx={{ alignItems: 'center', marginTop: '1.5%' }} >
+                  <Avatar sx={{ bgcolor: deepOrange[500], left: '0%' }} >U</Avatar >
+                  <Typography variant='h6' > Username </Typography>
                 </Stack >
                 <p >Description</p >
               </Stack >
 
-              <Box sx={{width: '35', height: '60%' }} >
-                <img src='https://source.unsplash.com/825x600/?beach' ></img >
-              </Box >
+              <Container >
+                <img src='https://source.unsplash.com/1600x900/?beach' alt='Post' style={{ width: '100%', objectFit: 'contain' }} ></img >
+              </Container >
 
-              <Stack direction= 'column' sx={{height: '10%'}} >
-                <Stack direction='row' >
-                  <EmojiEmotions></EmojiEmotions>
+              <Stack direction= 'column' sx={{height: '12%', marginBottom: '2%'}} >
+                <Stack direction='row' sx={{height: '5%', alignItems: 'center'}} >
+                  <Avatar sx={{ color: '#77AAFF', backgroundColor: "inherit", scale: '75%'}} >
+                    <ThumbUpRounded />
+                  </Avatar >
                   <h5>1500 Likes</h5>
                 </Stack >
-                <Stack direction='row' >
-                  <Button sx={{}} >
+                <Stack direction='row' spacing={1} sx={{ height: '5%', justifyContent: 'space-evenly', marginBottom: '2%' }} >
+                  <Button color='primary' variant='outlined' size="large" sx={{ width: '32%' }} >
                     Like
                   </Button >
-                  <Button >
-                    Comment
+                  <Button color='primary' variant='outlined' size="large" sx={{ width: '32%' }} >
+                    Comments
                   </Button >
-                  <Button >
+                  <Button color='primary' variant='outlined' size="large" sx={{ width: '32%' }} >
                     Share
                   </Button >
                 </Stack >
               </Stack >
             </Stack >
     
-          </div >
+          </Container >
         );
         setPlaceholders((prevPlaceholders) => [...prevPlaceholders, newPlaceholder]);
       }
@@ -129,7 +149,7 @@ const ScrollHandler: React.FC = () => {
 
   return <Stack direction='row' >
       <Container sx={{width: '18%', height: '94%', left: '5%'}} >
-        <Container sx={{width: '18%', height: '94%', top: '5.5%', left: '5%', borderRadius: '10px', backgroundColor: '#CCCCCC', position: 'fixed'}} >
+        <Container sx={{width: '18%', height: '92%', top: '6.5%', left: '5%', borderRadius: '10px', backgroundColor: '#CCCCCC', position: 'fixed' }} >
           <p > Menu </p >
           <Button >
             Menu Element
@@ -137,12 +157,12 @@ const ScrollHandler: React.FC = () => {
         </Container >
       </Container >
 
-      <Container sx={{width: '35%', height: '94%', top: '5.5%', left: '21%', right: '21%', borderRadius: '10px',  backgroundColor: '#CCCCCC'}} >
+      <Container sx={{width: '35%', height: '94.5%', top: '5.5%', left: '21%', right: '21%', borderRadius: '10px' }} >
         {placeholders}
       </Container >
       
       <Container sx={{width: '18%', height: '94%', right: '5%' }} >
-        <Container  sx={{width: '18%', height: '94%', top: '5.5%', right: '5%', borderRadius: '10px', backgroundColor: '#CCCCCC',  position: 'fixed'}} >
+        <Container  sx={{width: '18%', height: '92%', top: '6.5%', right: '5%', borderRadius: '10px', backgroundColor: '#CCCCCC',  position: 'fixed' }} >
           <p > Chat </p >
           <Button >
             Send Message
