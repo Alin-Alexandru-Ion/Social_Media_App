@@ -13,7 +13,7 @@ function Header() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Social Media App
             </Typography >
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" width="40" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" width="40" alt="React logo" />
           </Toolbar >
         </AppBar >
     );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Box, Container, Stack, Typography, Avatar, backdropClasses } from '@mui/material';
-import { EmojiEmotions, ThumbUp, ThumbUpRounded, Widgets } from '@mui/icons-material';
+import { Button, Container, Stack, Typography, Avatar } from '@mui/material';
+import { ThumbUpRounded } from '@mui/icons-material';
 import { deepOrange } from '@mui/material/colors';
 
 const ScrollHandler: React.FC = () => {
@@ -103,36 +103,39 @@ const ScrollHandler: React.FC = () => {
     };
 
     // Touch event handlers
+    const handleTouchMove = (touchStartY: number, event: TouchEvent) => {
+      const touchCurrentY = event.touches[0].clientY;
+      const touchDeltaY = touchCurrentY - touchStartY;
+      if (touchDeltaY > 0) {
+        // Perform actions when dragging down near the bottom of the screen
+        const newPlaceholder = (
+          <div
+            key={placeholders.length}
+            style={{
+              backgroundColor: '#000000',
+              height: '500px',
+              marginLeft: '5px',
+              marginRight: '5px',
+              marginTop: '25px',
+              marginBottom: '5px',
+            }}
+          />
+        );
+        setPlaceholders((prevPlaceholders) => [...prevPlaceholders, newPlaceholder]);
+      }
+    };
+
+    const handleTouchEnd = (handleTouchMove: (event: TouchEvent) => void) => {
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchend', () => handleTouchEnd(handleTouchMove));
+    };
+
     const handleTouchStart = (event: TouchEvent) => {
       if (event.touches.length === 1) {
         const touchStartY = event.touches[0].clientY;
-        const handleTouchMove = (event: TouchEvent) => {
-          const touchCurrentY = event.touches[0].clientY;
-          const touchDeltaY = touchCurrentY - touchStartY;
-          if (touchDeltaY > 0) {
-            // Perform actions when dragging down near the bottom of the screen
-            const newPlaceholder = (
-              <div
-                key={placeholders.length}
-                style={{
-                  backgroundColor: '#000000',
-                  height: '500px',
-                  marginLeft: '5px',
-                  marginRight: '5px',
-                  marginTop: '25px',
-                  marginBottom: '5px',
-                }}
-              />
-            );
-            setPlaceholders((prevPlaceholders) => [...prevPlaceholders, newPlaceholder]);
-          }
-        };
-        const handleTouchEnd = () => {
-          document.removeEventListener('touchmove', handleTouchMove);
-          document.removeEventListener('touchend', handleTouchEnd);
-        };
-        document.addEventListener('touchmove', handleTouchMove);
-        document.addEventListener('touchend', handleTouchEnd);
+        const boundHandleTouchMove = (e: TouchEvent) => handleTouchMove(touchStartY, e);
+        document.addEventListener('touchmove', boundHandleTouchMove);
+        document.addEventListener('touchend', () => handleTouchEnd(boundHandleTouchMove));
       }
     };
 
@@ -145,7 +148,7 @@ const ScrollHandler: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('touchstart', handleTouchStart);
     };
-  }, []); // Empty dependency array to run the effect only once
+  }, [placeholders.length]); // Include placeholders.length in the dependency array
 
   return <Stack direction='row' >
       <Container sx={{width: '18%', height: '94%', left: '5%'}} >
